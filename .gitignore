@@ -12,4 +12,5 @@ test/bower_components
 .jshintrc
 .tmp
 .yo-rc.json
-
+bower.json
+favicon.ico
