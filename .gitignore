@@ -1,9 +1,14 @@
+*~
+
 node_modules
 dist
-.tmp
-.sass-cache
+bower.json
+favicon.ico
 bower_components
 test/bower_components
+
+.tmp
+.sass-cache
 .bowerrc
 .DS_Store
 .editorconfig
@@ -12,5 +17,4 @@ test/bower_components
 .jshintrc
 .tmp
 .yo-rc.json
-bower.json
-favicon.ico
+
