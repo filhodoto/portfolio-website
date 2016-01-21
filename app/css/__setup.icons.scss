@@ -19,6 +19,11 @@ article .mail:after {
 	content: $mail2;
 }
 
+header .github:before,
+article .github:after {
+	content: $github;
+}
+
 header .tools:before,
 article .tools:after {
 	content: $tools;

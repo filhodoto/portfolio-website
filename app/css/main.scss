@@ -171,3 +171,20 @@ header ol li a,
 		display: inline-block;
 	}
 }
+
+//github icon needs specific code in #intro because of icon style
+#intro ol li a.github {
+	position: relative;
+	top: -6px;		
+	
+	&:after {
+		background: none;
+		color: $white;
+		padding: 0;
+		font-size: 30px;
+	}
+
+	&:hover:after {
+		color: $blue;
+	}
+}	

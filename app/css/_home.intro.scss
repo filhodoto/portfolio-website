@@ -27,10 +27,20 @@
 		font-size: 60px;
 		padding: 0 0 20px 0;
 		line-height: 105%;
+
+		@include media($max750) {
+			font-size: 50px;
+			line-height: 120%;
+		}
 				
 		@include media($max600) {
-			font-size: 35px;
-			line-height: 130%;
+			font-size: 40px;
+			line-height: 120%;
+		}
+
+		@include media($max400) {
+			font-size: 40px;
+			line-height: 115%;
 		}
 
 		mark {
@@ -38,8 +48,12 @@
 			font-size: 55px;
 			text-transform: uppercase;
 			
+			@include media($max750) {
+				font-size: 50px;
+			}			
+			
 			@include media($max600) {
-				font-size: 35px;
+				font-size: 40px;
 			}			
 		}		
 	}
@@ -56,10 +70,20 @@
 	div {
 		@include span-columns(6.2 of 12);
 		
+		@include media($max1100) {
+			@include span-columns(8);
+		}
+
+/*
 		@include media($max900) {
 			@include span-columns(8);
 		}		
+*/
 
+		@include media($max800) {
+			@include span-columns(10);
+		}		
+		
 		@include media($max700) {
 			@include span-columns(12);
 		}		
@@ -114,7 +138,7 @@
 		@include media($max350) {
 			margin: 0 auto;
 			padding: 10px 0 15px;
-			width: 126px;
+			width: 168px;
 		}
 		
 		li {
