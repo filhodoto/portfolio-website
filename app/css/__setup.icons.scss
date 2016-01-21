@@ -1,0 +1,37 @@
+//social links
+header .linkedin:before,
+article .linkedin:after {
+	content: $linkedin;
+}
+
+header .instagram:before,
+article .instagram:after {
+	content: $instagram;
+}
+
+header .twitter:before,
+article .twitter:after {
+	content: $twitter;
+}
+
+header .mail:before,
+article .mail:after {
+	content: $mail2;
+}
+
+header .tools:before,
+article .tools:after {
+	content: $tools;
+}
+
+.project .arrow:after {
+	content: $down;
+}
+
+.project figure a p:after {
+	content: $zoom;
+}
+
+header h1 a:before {
+	content: $home;
+}

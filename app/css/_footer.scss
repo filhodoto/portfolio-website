@@ -1,0 +1,8 @@
+footer {
+	@include alpha-attribute('background-color', rgba($black, 0.9), $black);
+	padding: 20px;
+	color: $white;
+	font-size: 14px;
+	padding: 20px 0;
+	text-align: center;
+}

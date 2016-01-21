@@ -1,0 +1,399 @@
+//general projects article
+.project {
+	//background: $bgblue;
+	@include alpha-attribute('background-color', rgba($bgblue, 0.9), $bgblue);
+	position: relative;
+	
+	//work with dark bg
+	&:nth-child(2n) {
+		@include alpha-attribute('background-color', rgba($black, 0.9), $black);
+		
+		figure {
+			@include omega;
+			@include alpha-attribute('background-color', rgba($black, 0.9), $black);
+			float: left;
+						
+			&:hover {
+				
+				figcaption p {
+					color: $black;					
+				}
+			}
+			
+			figcaption:before {
+				background: linear-gradient(to bottom, rgba(219,219,219,0) 0%, rgba(219,219,219,0.8) 75%);				
+			}		
+		}
+		
+		div {
+			@include omega();
+			//margin-right: 2.35765%;
+			color: $white;
+			float: right;
+
+			h1 {
+				color: $white;
+			}
+			
+			a {
+				color: $white;
+				
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+
+		//btn
+		.btn {
+			color: $white;
+			border: 2px solid $white;
+
+			&:hover {
+				color: $blue;
+				border: 2px solid $blue;
+			}
+		}
+	}
+	
+	&:last-child {
+		height: 90vh;
+
+		@include media($max800) {
+			height: auto;
+			min-height: 0;
+		}
+		
+		.arrow {
+		
+			&.up {
+				top: 0;
+			}
+			
+			&.down {
+				display: none;
+			}
+		}	 
+	}
+	
+	//subtitle with type of work
+	h2 {
+		@include Opacity(0.8);
+		font-size: 20px;	
+	}
+	
+	
+	//arrows
+	.arrow {
+		@include Opacity(0.2);
+		position: absolute;
+	    left: 50%;
+	    margin-left: -35px;
+	   
+		//down arrow
+		&.down {
+		    bottom: 0;
+		    
+		    &:after {
+				content: $down;
+		    }		
+		}
+
+		&.up {
+		    top: 30px;
+		    
+		    &:after {
+				content: $up;
+		    }		
+		}
+		
+	    @include media($max800) {
+		    display: none;
+	    }
+
+	    &:after {
+		    font-size: 70px;
+			color: $white;
+	    }
+
+	    &:hover {
+		    @include Opacity(0.6)		    
+	    }
+	}
+	
+	//tooltip on top of first arrow
+	.tooltip {
+		@include tipsy(n, $black, 10px, 0);
+		@include Opacity(0.8);
+		color: $white;
+		position: absolute;
+		left: 50%;
+		margin-left: -2.5px;
+	    bottom: 50px;
+	    width: 5px;
+	    height: 5px;	    
+	    
+	    &:after {
+			padding: 7px 15px;
+	    }
+	    
+	    &.show {
+		    bottom: 20px;
+		    
+		    &:before,
+		    &:after {
+			    @include Opacity(0.8);
+			    visibility: visible;
+		    }
+	    }
+	}
+	
+	figure,
+	div {
+		@include span-columns(4 of 8);
+		
+		@include media($max600) {
+			@include span-columns(12);
+			@include omega();
+		}		
+	}
+	
+	
+	//project thumbnail
+	figure  {
+		@include alpha-attribute('background-color', rgba($bgblue, 0.9), $bgblue);
+		position: relative;
+		cursor: pointer;
+		overflow: hidden;
+		height: auto;
+		line-height: 12px;
+		max-height: 330px;
+		float: right;
+/*
+		border: 1px solid;
+		@include alpha-attribute('border-color', rgba($black, 0.5), $black);
+*/
+		
+		@include media($max600) {
+			margin: 50px 0 0 0;
+			max-height: 230px;
+		}
+		
+		
+		&:hover {
+			@include transition(0.2s);
+			
+			& > a {
+				
+				&:before {
+					opacity: 1;
+					transform: translate3d(0,0,0);
+				}
+				
+				p {
+					@include transition(0.2s);
+					@include Opacity(1);
+					color: $white;
+					transform: translate3d(0,-50%,0) translate3d(0,0,0);
+				}
+			}	
+		}
+		
+		//thumbnail hover background
+		& > a  {
+			@include transition(0.2s);
+			height: 100%;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: 100%;
+			overflow: hidden;
+						
+			&:before {
+				@include transition(0.2s);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to bottom, rgba(27,31,40,0) 0%, rgba(27,31,40,0.8) 75%);
+				content: '';
+				opacity: 0;
+				transform: translate3d(0,50%,0);
+			}
+
+			//thumbnail hover text			
+			p {
+				@include transition(0.2s);
+				@include vertical-align();
+				@include Opacity(0);
+				margin: 0 auto;
+				width: 114px;
+				float: none;
+				letter-spacing: 0.3px;
+				font-size: 20px;
+				text-transform: lowercase;
+				
+				transform: translate3d(0,-50%,0) translate3d(0,40px,0);
+				
+				&:after {
+					position: relative;
+					margin-left: 5px;
+					font-size: 20px;
+				}			
+			}			
+		}
+		
+		//hidden gallery link container to use with popup
+		aside {
+			display: none;
+		}
+	}	
+		
+	img {
+		max-width: 101%;
+		height: auto;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+		
+	}
+	
+	//information container
+	div {
+		margin-right: 2.35765%;
+		color: $black;
+		
+		a {
+			color: $black;
+			
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	
+	//btn
+	.btn {
+		margin: 20px 0 0 0;
+		color: $black;
+		border: 2px solid $black;
+		
+		@include media($max700) {
+			margin: 0;
+		}
+		
+		&:hover {
+			color: $white;
+			border: 2px solid $white;
+		}
+	}
+}
+
+//project with extra works
+.extras {
+	
+	//container with thumbnails
+	//.display {
+	ul {
+		@include span-columns(5 of 10);
+		@include omega(2);
+		
+		@include media($max600) {
+			@include span-columns(12);
+			margin: 30px 0 0;
+		}			
+		
+		//image container
+		//a {
+		li {
+			@include span-columns(4 of 12);
+			@include omega(3n);
+			margin-bottom: 2.35765%;
+			display: block;
+			position: relative;
+						
+			@include media($max700) {
+				@include span-columns(6 of 12);
+				@include omega-reset(3n);
+				@include omega(2n);
+			}
+			
+/*
+			&:hover {
+			
+				span {
+					
+					&:before {
+						opacity: 1;
+						transform: translate3d(0,0,0);
+					}
+					
+					p {
+						@include transition(0.2s);
+						@include Opacity(1);
+						color: $white;
+						transform: translate3d(0,-50%,0) translate3d(0,0,0);
+					}
+				}
+			}	
+*/
+						
+/*
+			figcaption {
+				display: none;
+			}
+*/
+			
+			//img {
+			figure {
+				width: 100%;
+				height: auto;
+				margin: 0;
+				
+				figcaption p {
+					font-size: 17px;
+				}
+			}
+			
+			//gradient background
+/*
+			span {
+				@include transition(0.2s);
+				height: 100%;
+				position: absolute;
+				text-align: center;
+				top: 0;
+				width: 100%;
+				overflow: hidden;
+							
+				&:before {
+					@include transition(0.2s);
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(to bottom, rgba(27,31,40,0) 0%, rgba(27,31,40,0.8) 75%);
+					content: '';
+					opacity: 0;
+					transform: translate3d(0,50%,0);
+				}
+			}	
+			
+			span p {
+				font-size: 17px;
+			}
+*/
+		}
+	}
+}
+
+
+//specific CSS for .JS
+
+.js .projects {
+
+	figure img {
+		display: none;		
+	}
+}

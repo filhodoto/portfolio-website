@@ -1,0 +1,39 @@
+//Helvetica, Arial
+//.project figure figcaption p,
+/*
+main .btn {
+	font-family:  'helvetica', 'arial', sans-serif;
+}	
+*/
+
+//Oswald
+header li a,
+.project figure a p,
+.extras a p,
+main .btn,
+.tooltip:after,
+footer,
+h1,
+h2 {
+	font-family: 'Oswald', sans-serif;
+}
+
+//text
+#intro h2,
+p {
+	//font-family: 'Quattrocento', serif;
+	//font-family: 'Merriweather', serif;
+	//font-family: 'Raleway', serif;
+	font-family: 'Ubuntu', serif;
+	font-weight: 400;
+}
+
+//icomoon
+.project figure a p:after,
+.project .arrow:after,
+#intro ol li a:after,
+header a:before,
+.mfp-arrow:after,
+.btn:after {
+	font-family: 'icomoon';
+}

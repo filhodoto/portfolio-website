@@ -1,0 +1,129 @@
+header {
+	@include transition(all 0.2s ease-in-out);
+	@include alpha-attribute('background-color', rgba($white, 0.7), $white);
+	position: fixed;
+	margin-top: -50px;
+	width: 100%;
+	z-index: 3;
+	
+	
+	//class to show header
+	&.show {
+		@include transition(all 0.2s ease-in-out);
+		margin-top: 0;
+	}
+	
+	section {
+		padding: 0 20px;
+		position: relative;
+		
+		@include media($max600) {
+			padding: 0;
+		}
+	}
+	
+	h1,
+	h1 a,
+	ul li a {
+		font-size: 17px;
+	}
+	
+	//links styles
+	h1 a,
+	li a {
+		color: $black;
+		padding: 8px 14px;
+		display: inline-block;
+		text-transform: lowercase;
+		
+		&:hover {
+			//@include alpha-attribute('background-color', rgba($black, 0.7), $black);
+			@include alpha-attribute('background-color', rgba($bgblue, 0.7), $bgblue);
+			color: $white;
+		}
+		
+		@include media($max600) {
+			padding: 6px 14px;
+		}
+	}
+	
+	h1 a,
+	ul li a {
+		
+		@include media($max400) {
+			font-size: 20px;
+			
+			span {
+				text-indent: -9999px;
+				display: inline-block;
+			}
+		}		
+		
+		&:before {
+			position: relative;
+			margin: 0 5px 0 0;
+			
+			@include media($max400) {
+				margin: 0;
+			}	
+			
+		}		
+	}
+	
+	h1,
+	li {
+		float: left;
+	}
+	
+	//scroll down text
+	p {
+		@include Opacity(0.4);
+		@include vertical-align();
+		margin: 0;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		font-size: 13px;
+	}
+	
+	//contact + work
+	ul {
+		float: left;
+		margin-left: 0;
+		
+		li {
+			margin: 0 20px 0 0;
+			
+			&:before {
+				margin: 0 5px 0 0;				
+			}
+		}
+		
+		.tools {
+			display: none;
+		}
+	}
+	
+	//social
+	ol {
+		float: right;
+		line-height: 140%;
+		
+		li {			
+			
+			&:last-child {
+				@include omega();
+			}
+			
+			a {
+				font-size: 20px;
+				line-height: 25px;
+				padding: 7px 7px;
+				
+				@include media($max600) {
+					padding: 7px 10px;				
+				}
+			}
+		}
+	}
+}

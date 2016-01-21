@@ -1,0 +1,23 @@
+
+//call this on element we want centered
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin reset-vertical-align() {
+    top: 0;
+    transform: translateY(0px);
+}
+
+
+//call this on parent
+@mixin preserve-3d() {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+

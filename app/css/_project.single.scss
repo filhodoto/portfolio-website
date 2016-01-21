@@ -1,0 +1,82 @@
+
+#project {
+
+	header {
+		@include transition(all 0.2s ease-in-out);
+		@include alpha-attribute('background-color', rgba($white, 0.7), $white);
+		position: fixed;
+		margin-top: 0;
+		width: 100%;
+		z-index: 3;
+	}	
+
+		
+	article {
+		@include alpha-attribute('background-color', rgba($black, 0.9), $black);
+		height: auto;
+		
+		//intro
+		div {
+			@include span-columns(8);
+			@include shift(2);
+			@include omega();
+			padding: 100px 0 70px 0;
+			text-align: center;
+			color: $white;
+			
+			@include media($max800) {
+				@include span-columns(12);
+				@include shift(0);
+				padding: 50px 0;
+			}
+			
+			h1 {
+				font-size: 35px;
+			}
+			
+			h2 {
+				@include Opacity(0.8);
+				font-size: 22px;	
+			}
+			
+			p {
+				padding: 6px 0;
+				
+				a {
+					color: $white;
+				}
+			}
+			
+			a {
+				float: none;
+				margin: 0 auto;
+				width: 130px;
+			}
+		}
+		
+		ul {
+			@include span-columns(12);
+			overflow: hidden;
+			
+			li {
+				width: 100%;
+				overflow: hidden;
+				text-align: center;
+				margin: 0 0 50px 0;
+				
+				&:last-child {
+					margin: 0;
+				}
+				
+				@include media($max600) {
+					margin: 0 0 20px 0;
+				}
+
+				img {
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+}
