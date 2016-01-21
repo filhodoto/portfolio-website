@@ -1,5 +1,4 @@
 
-
 /*
 var populateHeader = function (intro, header)
 {
@@ -24,26 +23,12 @@ var goToProject = function (arrow, body)
 	//if DOWN arrow
 	if (arrow.hasClass('down'))
 	{
-		body.scrollTo(nextProject, 300);
-		
-/*
-        $('html, body').animate({
-            scrollTop: nextProject.offset().top
-        }, 1000);
-*/
-		
+		body.scrollTo(nextProject, 300);		
 	}
 	//if UP arrow
 	else
 	{
-		body.scrollTo(prevProject, 300);
-
-/*
-        $('html, body').animate({
-            scrollTop: prevProject.offset().top
-        }, 1000);
-*/
-		
+		body.scrollTo(prevProject, 300);		
 	}
 	
 };
@@ -73,7 +58,7 @@ $(document).ready(function()
 		body.scrollTo(main.find('.project'), 300);
 	});
 	
-	//scroll to next project when clicking on down arrow
+	//scroll to next project when clicking on down arrow -- won't use this for now
 /*
 	arrow.click(function(e)
 	{
@@ -152,8 +137,7 @@ $(document).ready(function()
 	//////////// End projects gallery ////////////
 
 	//populate header with information
-	//populateHeader(intro, header);
-
+	//populateHeader(intro, header); -- won't use this for now
 	
 	//show header with waypoints
 	var showHeader = new Waypoint(
@@ -226,13 +210,7 @@ $(document).ready(function()
 			tooltip.remove();
 		},
 		offset: '0'
-  	})
-
-
-	/////////////////////
-	//RESPONSIVE
-	/////////////////////
-	
+  	})	
 	
 });
 
