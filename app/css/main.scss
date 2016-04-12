@@ -70,7 +70,7 @@ article {
 	height: 100vh;
 	min-height: 620px;
 
-	@include media($max800) {
+	@include media($max1100) {
 		height: auto;
 		min-height: 0;
 	}
@@ -80,7 +80,7 @@ article {
 #home article:not(#intro) section {
 	@include vertical-align();
 	
-	@include media($max800) {
+	@include media($max1100) {
 		@include reset-vertical-align();
 	}
 }
@@ -89,8 +89,8 @@ article {
 article:not(#intro) section {
 	padding: 0 20px;
 
-	@include media($max800) {
-		padding: 50px 20px;
+	@include media($max1100) {
+		padding: 80px 20px;
 	}
 	
 	@include media($max700) {

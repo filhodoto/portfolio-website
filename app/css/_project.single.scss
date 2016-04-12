@@ -15,6 +15,10 @@
 		@include alpha-attribute('background-color', rgba($black, 0.9), $black);
 		height: auto;
 		
+		&:not(#intro) section {
+			padding: 0 20px;
+		}
+		
 		//intro
 		div {
 			@include span-columns(8);
@@ -27,7 +31,7 @@
 			@include media($max800) {
 				@include span-columns(12);
 				@include shift(0);
-				padding: 50px 0;
+				//padding: 50px 0;
 			}
 			
 			h1 {

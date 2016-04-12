@@ -6,6 +6,10 @@
 	section {
 		padding: 100px 20px 20px;
 		
+		@include media($max1100) {
+			padding: 50px 20px 20px;	
+		}
+		
 		@include media($max800) {
 			@include span-columns(12);
 			padding: 50px 20px;
