@@ -7,10 +7,6 @@ Check it out here htt://goncaloramalho.com
 
 ————————————————————————————————————————————————
 
-“Use the force Harry”
-
-- Gandalf
-
 
 ## Features
 
