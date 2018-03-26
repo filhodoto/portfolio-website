@@ -2,19 +2,20 @@
 
 node_modules
 dist
-bower.json
+#bower.json
 favicon.ico
 bower_components
 test/bower_components
 
 .tmp
 .sass-cache
-.bowerrc
+#.bowerrc
 .DS_Store
 .editorconfig
-.git
+#.git
 .gitattributes
-.jshintrc
+#.jshintrc
 .tmp
+.idea
 .yo-rc.json
 
